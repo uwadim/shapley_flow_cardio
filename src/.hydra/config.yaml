@@ -1,0 +1,67 @@
+data:
+  features_fpath: ../data/X_death.pkl
+  labels_fpath: ../data/y_death.pkl
+  predictors:
+  - Время ИК
+  - Hb до операции
+  - ИМТ
+  - КДР(исх)
+  - ФК аортального клапана
+  - НРС д/о  (1-есть,0-нет)
+  - Пиковый градиент на АК д/о
+  - Стеноз -1, недостаточность-0
+  - Время пережатия аорты
+  - POAF
+  - ИБС (Да/Нет - 1/0)
+  - Возраст, лет
+  - Перенесенный ИМ (Да/Нет - 1/0)
+  - ФП д/о
+  - ППС Порок МК (Да/Нет - 1/0)
+  target: DEATH
+  features:
+  - - Время ИК
+    - Время пережатия аорты
+  - - ИМТ
+    - НРС д/о  (1-есть,0-нет)
+  - - ИМТ
+    - ФП д/о
+  - - ИМТ
+    - POAF
+  - - ИМТ
+    - КДР(исх)
+  - - ИБС (Да/Нет - 1/0)
+    - Перенесенный ИМ (Да/Нет - 1/0)
+  - - Стеноз -1, недостаточность-0
+    - ФК аортального клапана
+  - - Стеноз -1, недостаточность-0
+    - Пиковый градиент на АК д/о
+  - - Стеноз -1, недостаточность-0
+    - ППС Порок МК (Да/Нет - 1/0)
+  - - ФП д/о
+    - POAF
+  - - НРС д/о  (1-есть,0-нет)
+    - ФП д/о
+  - - НРС д/о  (1-есть,0-нет)
+    - POAF
+  - - Возраст, лет
+    - Время ИК
+  - - ИМТ
+    - КДР(исх)
+training:
+  test_size: 0.33
+  normalize_num_features: true
+  model_params:
+    num_boost_round: 3000
+    early_stopping_rounds: 100
+    verbose_eval: 1000
+  optim_params:
+    eta: 0.03942389417714505
+    max_depth: 1
+    n_estimators: 1104
+    subsample: 0.4258489088180469
+    eval_metric: auc
+    objective: binary:logistic
+  nruns: 100
+random_state: 17
+save_fpath: ../results/causal_graph_init.png
+result_fpath: ../results/causal_graph_result.png
