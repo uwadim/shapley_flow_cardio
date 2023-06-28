@@ -127,7 +127,8 @@ venv/
 ENV/
 env.bak/
 venv.bak/
-
+git rm -r src/.hydra/
+src/.hydra/
 # Spyder project settings
 .spyderproject
 .spyproject
